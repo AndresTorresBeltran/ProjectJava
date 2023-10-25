@@ -17,7 +17,7 @@ public class Teacher extends school{
 
 
     }
-    System.out.println("HOla");
+
 
 
 }
