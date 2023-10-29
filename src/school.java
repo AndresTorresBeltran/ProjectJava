@@ -10,5 +10,10 @@ public abstract class school {
         this.id=id;
         this.name=name;
     }
+    public String getName(){return name;};
 
+
+    public int getId() {
+        return id;
+    }
 }
