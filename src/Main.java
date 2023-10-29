@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList Teacherslist = new ArrayList();
+        ArrayList<Teacher> Teacherslist = new ArrayList<Teacher>();
 
         //Teachers
         Teacher teacher1 = new Teacher(1, "Cayo Perez", true, 40, 2);
@@ -19,7 +19,7 @@ public class Main {
         Teacherslist.add(teacher4);
         //Students
 
-        ArrayList StudentsList = new ArrayList<>();
+        ArrayList<Student> StudentsList = new ArrayList<Student>();
         Student student1 = new Student(988, "Alfredo Espinoza", 23);
         StudentsList.add(student1);
         Student student2 = new Student(983, "Kevin Sote", 20);
@@ -33,27 +33,27 @@ public class Main {
         Student student6 = new Student(333, "Alfreo Marin", 22);
         StudentsList.add(student6);
         //Classes
-        ArrayList Clases = new ArrayList();
+        ArrayList<Clase> clases = new ArrayList<Clase>();
         Clase Dibujo = new Clase("Dibujo 1", "Salon 104", teacher1);
         Dibujo.addStudent(student1);
         Dibujo.addStudent(student2);
         Dibujo.addStudent(student6);
-        Clases.add(Dibujo);
+        clases.add(Dibujo);
         Clase Python = new Clase("Python 2", "Salon 106", teacher4);
         Python.addStudent(student2);
         Python.addStudent(student3);
         Python.addStudent(student4);
-        Clases.add(Python);
+        clases.add(Python);
         Clase Photo = new Clase("Photo", "Salon 201", teacher3);
         Photo.addStudent(student3);
         Photo.addStudent(student4);
         Photo.addStudent(student5);
-        Clases.add(Photo);
+        clases.add(Photo);
         Clase Java = new Clase("Java POO", "Salon 204", teacher1);
         Java.addStudent(student3);
         Java.addStudent(student5);
         Java.addStudent(student6);
-        Clases.add(Java);
+        clases.add(Java);
 
 
         System.out.println("******** Welcome to the University System ********\n");
@@ -90,8 +90,8 @@ public class Main {
                     i = 1;
                     //Printing class list
                     System.out.println("Class List");
-                    for (i = 0; i < Clases.size(); i++) {
-                        System.out.println(i + ". " + Clases.get(i).getClass().getName() + "Student " + StudentsList.get(i).getClass().getName() + "Teachers: " + teacher.getName());
+                    for (i = 0; i < clases.size(); i++) {
+                        System.out.println(i + ". " + clases.get(i).getClass().getName() + "Student " + StudentsList.get(i).getClass().getName() + "Teachers: " + Teacherslist.get(i));
 
                     }
                     //Choosing class
@@ -134,12 +134,10 @@ public class Main {
                 case (5):
                     System.out.println("Students List:");
                     for (i = 0; i < StudentsList.size(); i++) {
-                        System.out.println(" " + i + ". " + StudentsList.get(i).getClass() + " - id: 0" + StudentsList.get(i).getClass().getName());
+                        System.out.println(" " + i + ". " + StudentsList.get(i) + " - id: 0" + StudentsList.get(i));
                         i++;
                     }
-                    //Selecting student to show information and validate
-                    int numberStudentID = sc.nextInt();
-                    Student studentSelected = (Student) StudentsList.get(Dibujo.studentID);
+
 
                     break;
                 // 6. Exit System.
